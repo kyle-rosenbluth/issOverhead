@@ -55,6 +55,18 @@ body {
   background-color:  #bababf;
 }
 
+.github {
+  float: right;
+  margin-top: -30pt;
+  margin-right: 10pt;
+}
+a {
+  color: #CFCFD5;
+}
+a:visited {
+  color: #cfcfd5;
+}
+
 @-webkit-keyframes rotating-function {
   from {
     -webkit-transform: rotate(0deg);

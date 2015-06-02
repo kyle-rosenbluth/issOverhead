@@ -53,7 +53,6 @@ class ISSApp extends React.Component {
   }
 
   fetchNextEncounter() {
-    console.log("hello");
     this.setState({loaded: false});
     $.ajax({
       url: "http://api.open-notify.org/iss-pass.json?lat=" + this.state.lat + "&lon=" + this.state.lon + "&callback=?",

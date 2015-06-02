@@ -55,15 +55,15 @@ class ISSApp extends React.Component {
   fetchNextEncounter() {
     console.log("hello");
     this.setState({loaded: false});
-    // $.ajax({
-    //   url: "http://api.open-notify.org/iss-pass.json?lat=" + this.state.lat + "&lon=" + this.state.lon + "&callback=?",
-    //   dataType: 'json',
-    //   cache: false,
-    //   success: (data) => {
-    //     this.setState({encounterTime: ($.isArray(data.response)) ? data.response[0].risetime : 0, loaded: true});
-    //   },
-    //   error: (xhr, status, err) => {}
-    // });
+    $.ajax({
+      url: "http://api.open-notify.org/iss-pass.json?lat=" + this.state.lat + "&lon=" + this.state.lon + "&callback=?",
+      dataType: 'json',
+      cache: false,
+      success: (data) => {
+        this.setState({encounterTime: ($.isArray(data.response)) ? data.response[0].risetime : 0, loaded: true});
+      },
+      error: (xhr, status, err) => {}
+    });
   }
 
   componentDidMount() {
@@ -75,15 +75,15 @@ class ISSApp extends React.Component {
     }
   }
   reverseGeocode() {
-    // $.ajax({
-    //   url: "http://nominatim.openstreetmap.org/reverse?format=json&json_callback=?&lat=" + this.state.lat + "&lon=" + this.state.lon,
-    //   dataType: 'json',
-    //   cache: false,
-    //   success: (data) => {
-    //     this.setState({formattedLocation: data["address"]["village"] + ", " + data["address"]["state"]});
-    //   },
-    //   error: (xhr, status, err) => {}
-    // });
+    $.ajax({
+      url: "http://nominatim.openstreetmap.org/reverse?format=json&json_callback=?&lat=" + this.state.lat + "&lon=" + this.state.lon,
+      dataType: 'json',
+      cache: false,
+      success: (data) => {
+        this.setState({formattedLocation: data["address"]["village"] + ", " + data["address"]["state"]});
+      },
+      error: (xhr, status, err) => {}
+    });
   }
 
 

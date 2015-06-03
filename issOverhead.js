@@ -79,7 +79,7 @@ class ISSApp extends React.Component {
       dataType: 'json',
       cache: false,
       success: (data) => {
-        this.setState({formattedLocation: data["address"]["village"] + ", " + data["address"]["state"]});
+        this.setState({formattedLocation: data["address"]["county"] + ", " + data["address"]["state"]});
       },
       error: (xhr, status, err) => {}
     });
